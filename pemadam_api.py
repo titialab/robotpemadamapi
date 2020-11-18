@@ -482,12 +482,12 @@ while api>0 or ruang>0:
         elif robot.depanx>robot.sampingx:
             if robot.depany>robot.sampingy:
                 robot.keluar(robot.sampingy,robot.sampingx,robot.depany,robot.sampingx)
-                y=robot.sampingy
-                x=robot.depanx
-            elif robot.depany<robot.sampingy:
-                robot.keluar(robot.sampingy,robot.sampingx,robot.depany,robot.sampingx)
                 y=robot.depany
                 x=robot.sampingx
+            elif robot.depany<robot.sampingy:
+                robot.keluar(robot.sampingy,robot.sampingx,robot.sampingy,robot.depanx)
+                y=robot.sampingy
+                x=robot.depanx
         arena.cetakLagi()
         
         #tandai pintu sudah dikunjungi
