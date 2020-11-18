@@ -39,7 +39,7 @@ class Arena:
                     self.bloks[y][x].setValue("#","#")
                 elif y==10 and x in (5,6,7):
                     self.bloks[y][x].setValue("#","#")
-                elif y==11 and x in (18,19,20):
+                elif y==11 and x in (13,18,19,20,21):
                     self.bloks[y][x].setValue("#","#")
                 elif y==15 and x in range(1,8):
                     self.bloks[y][x].setValue("#","#")
