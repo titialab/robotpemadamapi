@@ -218,13 +218,14 @@ while api>0 or ruang>0:
         xruangmin=cariXmin(y,x,arena)
         xruangmaks=cariXmaks(y,x,arena)
         if arena.bloks[yruangmin-1][x].invisible=="P":
-            print("satu")
             while y>yruangmin-2 :
                 robot.keatas(y,x)
                 arena.cetakLagi()
                 y=y-1
             robot.sampingy=yruangmin-1
+            robot.sampingx=x
             robot.depany=yruangmin
+            robot.depanx=x-1
             diruangan=True
         elif arena.bloks[yruangmaks+1][x].invisible=="P":
             while y<yruangmaks+2 :
@@ -481,7 +482,7 @@ while api>0 or ruang>0:
                 x=robot.depanx
         elif robot.depanx>robot.sampingx:
             if robot.depany>robot.sampingy:
-                robot.keluar(robot.sampingy,robot.sampingx,robot.depany,robot.sampingx)
+                robot.keluar(robot.sampingy,robot.sampingx,robot.sampingy,robot.depanx)
                 y=robot.sampingy
                 x=robot.depanx
             elif robot.depany<robot.sampingy:
@@ -509,9 +510,8 @@ while api>0 or ruang>0:
 
     #cek
     
-    print("y=",y," x=",x," sampingy=",robot.sampingy," sampingx=",robot.sampingx," depany=",robot.depany," depanx=",robot.depanx)
 print("Misi selesai, kembali ke Home")
-print("y=",y," x=",x)
+
 #balik ke home
 if xHome<x:
     xtemp=x
